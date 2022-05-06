@@ -18,7 +18,10 @@ const ProductCard = ({ product }) => {
 			)}
 			<img src={product.image} alt={product.name} />
 			<div className={styles['product-details']}>
-				<h3>{product.name}</h3>
+				<h3>
+					{product.name}
+					{isInCart && <span> x ({product.quantity})</span>}
+				</h3>
 				<h5>{product.ingredients}</h5>
 				<div className={styles['product-footer']}>
 					{isInCart ? (

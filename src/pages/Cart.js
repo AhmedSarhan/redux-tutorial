@@ -3,7 +3,7 @@ import products from '../data.json';
 import ProductsList from './../components/Products/ProductsList';
 const Cart = () => {
 	const cartProds = [products[0], products[2]];
-	const total = cartProds.reduce((a, b) => a.price + b.price);
+	const total = cartProds.reduce((a, b) => a + b.price, 0);
 	return (
 		<div>
 			<h1 style={{ textAlign: 'center', fontSize: '35px', color: '#e74c3c' }}>
