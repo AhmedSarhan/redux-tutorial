@@ -7,7 +7,6 @@ import { useLocation } from 'react-router-dom';
 const ProductCard = ({ product }) => {
 	const { pathname } = useLocation();
 	const isInCart = pathname.includes('cart');
-	console.log('is', isInCart);
 
 	return (
 		<div className={styles['product-card']}>
