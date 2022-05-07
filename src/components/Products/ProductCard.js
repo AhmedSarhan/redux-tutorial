@@ -5,7 +5,10 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCartAction } from './../../redux/actions/cartActions';
+import {
+	addToCartAction,
+	removeFromCartAction,
+} from './../../redux/actions/cartActions';
 const ProductCard = ({ product }) => {
 	const { pathname } = useLocation();
 	const isInCart = pathname.includes('cart');
@@ -14,10 +17,17 @@ const ProductCard = ({ product }) => {
 	const addToCart = () => {
 		dispatch(addToCartAction(product));
 	};
+	const removeFromCart = () => {
+		dispatch(removeFromCartAction(product.name));
+	};
+
+	// 🚀 create two functions for the Increment and Decrement
+	// 🚀 dispatch the actions of the two functions
+	// ⚠️ don't forget to import the actions
 	return (
 		<div className={styles['product-card']}>
 			{isInCart && (
-				<button className={styles['del-product']}>
+				<button className={styles['del-product']} onClick={removeFromCart}>
 					<BsCartXFill />
 				</button>
 			)}
@@ -29,12 +39,14 @@ const ProductCard = ({ product }) => {
 				</h3>
 				<h5>{product.ingredients}</h5>
 				<div className={styles['product-footer']}>
+					{/* 🚀 add the increment and decrement functions to the buttons on click  */}
 					{isInCart ? (
 						<>
 							<button>
 								<AiOutlinePlus />
 							</button>
 							<h3>{product.price}EGP</h3>
+							{/* ❗ disable the minus button when quantity is 1 */}
 							<button>
 								<AiOutlineMinus />
 							</button>
