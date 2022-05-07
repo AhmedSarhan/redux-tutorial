@@ -1,9 +1,9 @@
 import React from 'react';
-import products from '../data.json';
 import ProductsList from './../components/Products/ProductsList';
+import { useSelector } from 'react-redux';
 const Cart = () => {
-	const cartProds = [products[0], products[2]];
-	const total = cartProds.reduce((a, b) => a + b.price, 0);
+	const { cart, cartTotal } = useSelector((state) => state);
+
 	return (
 		<div>
 			<h1 style={{ textAlign: 'center', fontSize: '35px', color: '#e74c3c' }}>
@@ -18,9 +18,9 @@ const Cart = () => {
 				}}
 			>
 				{' '}
-				total: {total}
+				total: {cartTotal}
 			</h4>
-			<ProductsList products={cartProds} />
+			<ProductsList products={cart} />
 		</div>
 	);
 };
