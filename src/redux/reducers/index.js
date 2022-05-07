@@ -6,7 +6,9 @@ const INTIAL_STATE = {
 	cartTotal: 0,
 	products,
 };
-
+const getCartTotal = (newCart) => {
+	return newCart.reduce((a, b) => a + b.price * b.quantity, 0);
+};
 const rootReducer = (state = INTIAL_STATE, action) => {
 	const { type, payload } = action;
 	switch (type) {
@@ -30,7 +32,7 @@ const rootReducer = (state = INTIAL_STATE, action) => {
 			return {
 				...state,
 				cart: newCart,
-				cartTotal: state.cartTotal + payload.price,
+				cartTotal: getCartTotal(newCart),
 			};
 		}
 		case CART_ACTION_TYPES.REMOVE_FROM_CART: {
@@ -40,12 +42,11 @@ const rootReducer = (state = INTIAL_STATE, action) => {
 
 			let newCart = [...state.cart];
 			newCart = newCart.filter((product) => product.name !== payload);
-			let newCartTotal = newCart.reduce((a, b) => a + b.price * b.quantity, 0);
 
 			return {
 				...state,
 				cart: newCart,
-				cartTotal: newCartTotal,
+				cartTotal: getCartTotal(newCart),
 			};
 		}
 
@@ -54,7 +55,39 @@ const rootReducer = (state = INTIAL_STATE, action) => {
 		// ❗ Never forget Redux is immutable - Don't mutate the state
 		// ⚠️ what's the scope of your cases?
 		// 🛩️ write your logic within the scope of your cases
-
+		case CART_ACTION_TYPES.INCREMENT_QUANTITY: {
+			// payload === productName
+			// loop in the cart array and increase the quantity of product with name === payload by 1
+			// increase the carTotal by the same amount as the product price
+			const newCart = [...state.cart].map((product) => {
+				if (product.name === payload) {
+					return { ...product, quantity: product.quantity + 1 };
+				}
+				return product;
+			});
+			let newCartTotal = newCart.reduce((a, b) => a + b.price * b.quantity, 0);
+			return {
+				...state,
+				cart: newCart,
+				cartTotal: getCartTotal(newCart),
+			};
+		}
+		case CART_ACTION_TYPES.DECREMENT_QUANTITY: {
+			// payload === productName
+			// loop in the cart array and decrease the quantity of product with name === payload by 1
+			// decrease the carTotal by the same amount as the product price
+			const newCart = [...state.cart].map((product) => {
+				if (product.name === payload) {
+					return { ...product, quantity: product.quantity - 1 };
+				}
+				return product;
+			});
+			return {
+				...state,
+				cart: newCart,
+				cartTotal: getCartTotal(newCart),
+			};
+		}
 		default:
 			return state;
 	}

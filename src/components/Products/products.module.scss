@@ -76,7 +76,7 @@
       cursor: pointer;
 
 
-      disabled {
+      &:disabled {
         cursor: not-allowed;
         opacity: 0.8;
       }
