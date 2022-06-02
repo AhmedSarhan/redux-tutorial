@@ -20,6 +20,17 @@ const Header = () => {
 							styles['nav-link'] +
 							(isActive ? ` ${styles['nav-link-active']}` : '')
 						}
+						to="/recipes"
+					>
+						Blog
+					</NavLink>
+				</li>
+				<li>
+					<NavLink
+						className={({ isActive }) =>
+							styles['nav-link'] +
+							(isActive ? ` ${styles['nav-link-active']}` : '')
+						}
 						to="/add-recipes"
 					>
 						Add Recipes
