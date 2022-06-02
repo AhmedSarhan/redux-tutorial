@@ -1,26 +1,58 @@
-[
-	{
-		"name": "Delux Feast",
-		"ingredients": "Beef pepperoni, Italian sausage, Green peppers, mushrooms, onions",
-		"price": 30,
-		"image": "https://i.imgur.com/Xu61fbu.jpg"
-	},
-	{
-		"name": "BBQ Feast",
-		"ingredients": "Marinated Chicken, BBQ Sauce with Onions",
-		"price": 50,
-		"image": "https://i.imgur.com/O8mTkO7.jpg"
-	},
-	{
-		"name": "Hot & Spicy Feast",
-		"ingredients": "Beef, onions, black olives and jalapenos",
-		"price": 35,
-		"image": "https://i.imgur.com/MQCOxiW.jpeg"
-	},
-	{
-		"name": "Extravaganzza Feast",
-		"ingredients": "Beef pepperoni, Italian sausage, beef, onions, green peppers, mushrooms, black olives",
-		"price": 40,
-		"image": "https://i.imgur.com/FQiukqk.jpeg"
-	}
-]
+{
+	"menu": [
+		{
+			"name": "Delux Feast",
+			"ingredients": "Beef pepperoni, Italian sausage, Green peppers, mushrooms, onions",
+			"price": 30,
+			"image": "https://i.imgur.com/Xu61fbu.jpg"
+		},
+		{
+			"name": "BBQ Feast",
+			"ingredients": "Marinated Chicken, BBQ Sauce with Onions",
+			"price": 50,
+			"image": "https://i.imgur.com/O8mTkO7.jpg"
+		},
+		{
+			"name": "Hot & Spicy Feast",
+			"ingredients": "Beef, onions, black olives and jalapenos",
+			"price": 35,
+			"image": "https://i.imgur.com/MQCOxiW.jpeg"
+		},
+		{
+			"name": "Extravaganzza Feast",
+			"ingredients": "Beef pepperoni, Italian sausage, beef, onions, green peppers, mushrooms, black olives",
+			"price": 40,
+			"image": "https://i.imgur.com/FQiukqk.jpeg"
+		}
+	],
+	"recipes": [
+		{
+			"title": "Grilled Shrimp with Konkani-Inspired Masala",
+			"category": "Family Dinner",
+			"description": "Konkan is a strip of land on the Western coast of India encompassing parts of Goa, Karnataka, and Maharashtra. In developing this recipe, I consulted a Konkani family friend, Sandhya Nadkarni, who offers Indian cooking classes and runs the blog Indfused. Sandhya explained that while Konkani recipes are generally diverse in flavors and textures, some fundamental commonalities do exist. Because of its tropical climate, Konkani people (those native to the Konkan region) often cook with coconut, chilies, and tamarind.",
+			"image": "https://i.imgur.com/k0NvIWD.jpeg",
+			"duration": 25
+		},
+		{
+			"title": "Blueberry Icebox Pie",
+			"category": "Deserts",
+			"description": "Chantilly cream is a sweetened whipped cream flavored with anything from vanilla to bourbon. Making perfectly whipped cream takes more patience than you might think. Some folks just turn the speed up to high and then end up with either a curdled mess en route to butter or whipped cream that deflates on your plate like melted ice cream. Perfectly whipped cream is not grainy, and it has a nice shine to it when dolloped onto the plate. For best results, chill the bowl for at least 15 minutes before whipping the cream, which helps the cream whip faster.",
+			"image": "https://i.imgur.com/UJHft2F.png",
+			"duration": 35
+		},
+		{
+			"title": "How to Grill Chicken",
+			"category": "COOKING TIPS & TECHNIQUES",
+			"description": "Grilled chicken is a mainstay of backyards everywhere, and for excellent reason: it’s a canvas for taking on a wide range of flavors, it’s economical for a crowd, it’s open to endless variation through cut or preparation, and when grilled, it’s downright delectable! Thankfully, chicken is also straightforward to grill.",
+			"image": "https://i.imgur.com/KTdQ3G8.png",
+			"duration": null
+		},
+		{
+			"title": "Tandoori Chicken",
+			"category": "INDIAN CHICKEN",
+			"description": "Tandoori chicken gets its name from the bell-shaped tandoor clay oven which is also used to make naan, or Indian flatbread.",
+			"image": "https://i.imgur.com/RFkNC1C.jpeg",
+			"duration": 55
+		}
+	]
+}

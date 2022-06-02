@@ -1,10 +1,10 @@
 import { CART_ACTION_TYPES } from '../actions/cartActions';
-import products from '../../data.json';
+import data from '../../data.json';
 
 const INTIAL_STATE = {
 	cart: [],
 	cartTotal: 0,
-	products,
+	products: data.menu,
 };
 const getCartTotal = (newCart) => {
 	return newCart.reduce((a, b) => a + b.price * b.quantity, 0);
