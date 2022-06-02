@@ -25,7 +25,7 @@ const Header = () => {
 						Blog
 					</NavLink>
 				</li>
-				<li>
+				{/* <li>
 					<NavLink
 						className={({ isActive }) =>
 							styles['nav-link'] +
@@ -35,7 +35,7 @@ const Header = () => {
 					>
 						Add Recipes
 					</NavLink>
-				</li>
+				</li> */}
 				<li>
 					<NavLink
 						className={({ isActive }) =>
