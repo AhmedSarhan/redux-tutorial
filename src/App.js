@@ -13,7 +13,7 @@ function App() {
 		<div>
 			<Provider store={store}>
 				<BrowserRouter>
-					{/* <Header /> */}
+					<Header />
 					<Routes>
 						<Route element={<Cart />} path="/cart" exact />
 						<Route element={<AddRecipes />} path="/add-recipes" exact />
