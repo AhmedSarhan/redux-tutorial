@@ -21,7 +21,7 @@ function App() {
 						<Route element={<Cart />} path="/cart" exact />
 						{/* <Route element={<AddRecipes />} path="/add-recipes" exact /> */}
 						<Route element={<RecipesPage />} path="/recipes" exact />
-						<Route element={<Wishlist />} path="/whislit" exact />
+						<Route element={<Wishlist />} path="/wishlist" exact />
 
 						<Route element={<Menu />} path="/" exact />
 					</Routes>
