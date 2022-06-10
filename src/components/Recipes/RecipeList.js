@@ -5,7 +5,7 @@ import styles from './recipes.module.scss';
 const RecipeList = ({ recipes }) => {
 	return (
 		<div className={styles['recipes-container']}>
-			{recipes.length > 0 &&
+			{recipes?.length > 0 &&
 				recipes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe} />)}
 		</div>
 	);
