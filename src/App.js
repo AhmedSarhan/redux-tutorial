@@ -22,7 +22,6 @@ function App() {
 						{/* <Route element={<AddRecipes />} path="/add-recipes" exact /> */}
 						<Route element={<RecipesPage />} path="/recipes" exact />
 						<Route element={<Wishlist />} path="/wishlist" exact />
-
 						<Route element={<Menu />} path="/" exact />
 					</Routes>
 				</BrowserRouter>

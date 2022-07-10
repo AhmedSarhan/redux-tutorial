@@ -1,4 +1,4 @@
-import { RECIPES_ACTION_TYPES } from '../actions/recipes.action';
+import { RECIPES_ACTION_TYPES } from '../actions/recipes.actions';
 import data from '../../data.json';
 
 const INITIAL_STATE = {

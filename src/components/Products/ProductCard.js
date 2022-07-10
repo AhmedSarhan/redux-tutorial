@@ -10,7 +10,7 @@ import {
 	removeFromCartAction,
 	incrementQuantityAction,
 	decrementQuantityAction,
-} from './../../redux/actions/cartActions';
+} from '../../redux/actions/menu.actions';
 const ProductCard = ({ product }) => {
 	const { pathname } = useLocation();
 	const isInCart = pathname.includes('cart');

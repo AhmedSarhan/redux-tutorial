@@ -5,7 +5,7 @@ import styles from './header.module.scss';
 import { useSelector } from 'react-redux';
 const Header = () => {
 	const cartLength = useSelector((state) =>
-		state.cart.reduce((a, b) => a + b.quantity, 0)
+		state.menu.cart.reduce((a, b) => a + b.quantity, 0)
 	);
 	return (
 		<header className={styles.header}>

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import ProductsList from '../components/Products/ProductsList';
 
 const Menu = () => {
-	const products = useSelector((state) => state.products);
+	const products = useSelector((state) => state.menu.products);
 
 	return (
 		<div>

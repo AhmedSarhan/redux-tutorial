@@ -2,14 +2,14 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ImStopwatch } from 'react-icons/im';
 import { BsHeartFill, BsHeart } from 'react-icons/bs';
-import { addToWishListAction } from '../../redux/actions/recipes.action';
-import { removeFromWishListAction } from './../../redux/actions/recipes.action';
+import { addToWishListAction } from '../../redux/actions/recipes.actions';
+import { removeFromWishListAction } from '../../redux/actions/recipes.actions';
 import styles from './recipes.module.scss';
 
 const RecipeCard = ({ recipe }) => {
 	const dispatch = useDispatch();
 	const isWishListed = useSelector(
-		(state) => state.wishlist.findIndex((rec) => rec.id === recipe.id) >= 0
+		(state) => state.blog.wishlist.findIndex((rec) => rec.id === recipe.id) >= 0
 	);
 	console.log('isWish', isWishListed);
 	const addToWishList = () => {

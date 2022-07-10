@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import RecipeList from '../components/Recipes/RecipeList';
 
 const Wishlist = () => {
-	const wishlist = useSelector((state) => state.wishlist);
+	const wishlist = useSelector((state) => state.blog.wishlist);
 
 	return (
 		<div>
