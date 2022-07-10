@@ -1,6 +1,5 @@
 import { getRecipesAction } from '../actions/recipes.actions';
 import Axios from './../../api/axios';
-import { uuid } from 'uuidv4';
 
 export const getRecipesService = () => async (dispatch) => {
 	try {
@@ -15,6 +14,11 @@ export const getRecipesService = () => async (dispatch) => {
 		throw new Error(error.message || error);
 	}
 };
+
+// 🚀 create a thunk action called getWishListService
+// ⚠️ don't forget the dispatch argument
+//❗ use tryCatch and throw Error
+// 🛩️ On to the recipes actions
 
 // ------------ example -----------------
 
