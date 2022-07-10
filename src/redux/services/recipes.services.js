@@ -1,6 +1,8 @@
 import {
 	getRecipesAction,
 	getWishListAction,
+	addToWishListAction,
+	removeFromWishListAction,
 } from '../actions/recipes.actions';
 import Axios from './../../api/axios';
 const { v4: uuid } = require('uuid');
@@ -53,6 +55,44 @@ export const getWishListService = () => async (dispatch, getState) => {
 	}
 };
 
+// dispatch(addToWishListService(recipe.id))
+
+export const addToWishListService = (recipeId) => async (
+	dispatch,
+	getState
+) => {
+	const { wishlist, recipes } = getState().blog;
+	try {
+		const response = await Axios.patch(`/wishlist/${USER_ID}.json`, {
+			[wishlist.length]: recipeId,
+		});
+		console.log('response', response.data);
+		const wishlitedRecipe = recipes.find((recipe) => recipe.id === recipeId);
+		dispatch(addToWishListAction(wishlitedRecipe));
+	} catch (error) {
+		throw new Error(error.message || error);
+	}
+};
+
+export const removeFromWishListService = (recipeId) => async (
+	dispatch,
+	getState
+) => {
+	const wishlist = getState().blog.wishlist;
+	const newWishList = wishlist.filter((recipe) => recipe.id !== recipeId);
+	const newWishListIds = newWishList.map((recipe) => recipe.id);
+
+	try {
+		const response = await Axios.put(
+			`/wishlist/${USER_ID}.json`,
+			newWishListIds
+		);
+		console.log('response', response.data);
+		dispatch(removeFromWishListAction(recipeId));
+	} catch (error) {
+		throw new Error(error.message || error);
+	}
+};
 // ------------ example -----------------
 
 // inside our component

@@ -2,8 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ImStopwatch } from 'react-icons/im';
 import { BsHeartFill, BsHeart } from 'react-icons/bs';
-import { addToWishListAction } from '../../redux/actions/recipes.actions';
-import { removeFromWishListAction } from '../../redux/actions/recipes.actions';
+import {
+	addToWishListService,
+	removeFromWishListService,
+} from '../../redux/services/recipes.services';
 import styles from './recipes.module.scss';
 
 const RecipeCard = ({ recipe }) => {
@@ -13,10 +15,10 @@ const RecipeCard = ({ recipe }) => {
 	);
 	console.log('isWish', isWishListed);
 	const addToWishList = () => {
-		dispatch(addToWishListAction(recipe));
+		dispatch(addToWishListService(recipe.id));
 	};
 	const removeFromWishList = () => {
-		dispatch(removeFromWishListAction(recipe.id));
+		dispatch(removeFromWishListService(recipe.id));
 	};
 	return (
 		<div className={styles['recipe-card']}>
