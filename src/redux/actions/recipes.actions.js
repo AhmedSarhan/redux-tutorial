@@ -4,7 +4,7 @@ export const RECIPES_ACTION_TYPES = {
 	GET_RECIPES: 'GET_RECIPES',
 };
 
-export const fillRecipes = (recipes) => {
+export const getRecipesAction = (recipes) => {
 	return {
 		type: RECIPES_ACTION_TYPES.GET_RECIPES,
 		payload: recipes,

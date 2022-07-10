@@ -1,9 +1,7 @@
-import axios from 'axios';
-
-const FIRE_BASE_API = process.env.REACT_APP_FIRE_BASE_API;
+import Axios from '../api/axios';
 
 export const addRecipeToApi = async (recipe) => {
-	const response = await axios.post(FIRE_BASE_API + '/recipes.json', recipe);
+	const response = await Axios.post('/recipes.json', recipe);
 
 	console.log('response', response.data);
 };

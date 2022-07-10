@@ -1,15 +1,18 @@
-import React from 'react';
-import RecipeList from './../components/Recipes/RecipeList';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Axios from 'axios';
-import { fillRecipes } from '../redux/actions/recipes.actions';
-import { useEffect } from 'react';
+import RecipeList from './../components/Recipes/RecipeList';
+import { getRecipesService } from './../redux/services/recipes.services';
 
 const RecipesPage = () => {
 	const recipes = useSelector((state) => state.blog.recipes);
 	const dispatch = useDispatch();
 
-	// is not integrated inside redux global state
+	useEffect(() => {
+		dispatch(getRecipesService());
+	}, [dispatch]);
+
+	/* ---------------- example of calling api to fill redux store with data from the BE without thunk -------------------- */
+	// // is not integrated inside redux global state
 	// const fetchRecipes = async () => {
 	// 	const response = await Axios.get('url/recipes');
 	// 	dispatch(fillRecipes(response.data));
