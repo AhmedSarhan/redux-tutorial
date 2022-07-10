@@ -4,6 +4,7 @@ export const RECIPES_ACTION_TYPES = {
 	GET_RECIPES: 'GET_RECIPES',
 	// ⚠️ add new type for getWishList
 	// ❗ follow the same naming convention for consistency
+	GET_WISH_LIST: 'GET_WISH_LIST',
 };
 
 export const getRecipesAction = (recipes) => {
@@ -18,6 +19,13 @@ export const getRecipesAction = (recipes) => {
 // ⚠️ Do this action need a payload? what is it?
 // 🛩️ On to the reducer
 // 🚀 dispatch it in the component
+
+export const getWishListAction = (wishList) => {
+	return {
+		type: RECIPES_ACTION_TYPES.GET_WISH_LIST,
+		payload: wishList,
+	};
+};
 
 export const addToWishListAction = (recipe) => {
 	return {

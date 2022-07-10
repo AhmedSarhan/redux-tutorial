@@ -24,5 +24,8 @@
 			"price": 40,
 			"image": "https://i.imgur.com/FQiukqk.jpeg"
 		}
-	]
+	],
+	"users": {
+		"ahmed": "7a55c6e9-173b-4392-9c3a-4b9dd4ae1086"
+	}
 }

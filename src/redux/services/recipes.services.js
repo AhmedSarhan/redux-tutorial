@@ -1,4 +1,7 @@
-import { getRecipesAction } from '../actions/recipes.actions';
+import {
+	getRecipesAction,
+	getWishListAction,
+} from '../actions/recipes.actions';
 import Axios from './../../api/axios';
 const { v4: uuid } = require('uuid');
 
@@ -8,7 +11,7 @@ const id = uuid();
 console.log('userId', id);
 
 // get the userId from the console
-const USER_ID = ' 7a55c6e9-173b-4392-9c3a-4b9dd4ae1086';
+const USER_ID = '7a55c6e9-173b-4392-9c3a-4b9dd4ae1086';
 
 export const getRecipesService = () => async (dispatch) => {
 	try {
@@ -29,6 +32,27 @@ export const getRecipesService = () => async (dispatch) => {
 //❗ use tryCatch and throw Error
 // 🛩️ On to the recipes actions
 
+export const getWishListService = () => async (dispatch, getState) => {
+	try {
+		const response = await Axios.get(`/wishlist/${USER_ID}.json`);
+		console.log('response', response.data);
+
+		const recipes = getState().blog.recipes;
+		const wishListIds = [...response.data];
+
+		const wishlist = [];
+		recipes.forEach((recipe) => {
+			wishListIds.forEach((id) => {
+				if (recipe.id === id) wishlist.push(recipe);
+			});
+		});
+		console.log('wishlist', wishlist);
+		dispatch(getWishListAction(wishlist));
+	} catch (error) {
+		throw new Error(error.message || error);
+	}
+};
+
 // ------------ example -----------------
 
 // inside our component
@@ -45,7 +69,14 @@ export const getRecipesService = () => async (dispatch) => {
 
 // arrow function version
 
-// const getTodos() => () => (dispatch) => {
-//    const response = await Axios.get('/todos');
+// const getTodos() => () => (dispatch, getState) => {
+// const state = getState();
+// const token = state.auth.token
+//    const response = await Axios.get('/todos'{
+// 	headers: {
+// 		Authorization: `Bearer ${token}`
+// 	}
+// }
+// );
 //     dispatch(fillTodos(response.data))
 // }

@@ -1,17 +1,28 @@
-import './App.css';
-import Header from './components/Navigation/Header';
+import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './redux';
+import {
+	getRecipesService,
+	getWishListService,
+} from './redux/services/recipes.services';
 
 import Menu from './pages/Menu';
 import Cart from './pages/Cart';
 import RecipesPage from './pages/Recipes';
 import Wishlist from './pages/Wishlist';
 
+import Header from './components/Navigation/Header';
+import './App.css';
+
 // import AddRecipes from './pages/AddRecipes';
 
 function App() {
+	useEffect(() => {
+		store.dispatch(getRecipesService());
+		store.dispatch(getWishListService());
+	}, []);
+
 	return (
 		<div>
 			<Provider store={store}>

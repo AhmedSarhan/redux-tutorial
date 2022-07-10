@@ -1,22 +1,27 @@
 import { combineReducers } from 'redux';
 import menuReducer from './menu.reducer';
 import recipesReducer from './recipes.reducer';
+import authReducer from './auth.reducer';
 
 // state = {
-// 	recipesReducer: {
+// 	blog: {
 // 		recipes: [],
 // 		wishlist: [],
 // 	},
-// 	menuReducer: {
+// 	menu: {
 // 		products: [],
 // 		cart: [],
 // 		cartTotal: 0,
 // 	},
-
+// auth: {
+// 	token: string;
+// 	user: {}
+// }
 // };
 const rootReducer = combineReducers({
 	blog: recipesReducer,
 	menu: menuReducer,
+	auth: authReducer,
 });
 
 export default rootReducer;

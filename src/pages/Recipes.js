@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import RecipeList from './../components/Recipes/RecipeList';
-import { getRecipesService } from './../redux/services/recipes.services';
+// import { getRecipesService } from './../redux/services/recipes.services';
 
 const RecipesPage = () => {
 	const recipes = useSelector((state) => state.blog.recipes);
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(getRecipesService());
-	}, [dispatch]);
+	// useEffect(() => {
+	// 	dispatch(getRecipesService());
+	// }, [dispatch]);
 
 	/* ---------------- example of calling api to fill redux store with data from the BE without thunk -------------------- */
 	// // is not integrated inside redux global state

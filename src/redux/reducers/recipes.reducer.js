@@ -18,7 +18,12 @@ const recipesReducer = (state = INITIAL_STATE, action) => {
 		// ❗ Never forget Redux is immutable - Don't mutate the state
 		// ⚠️ what's the scope of your new case?
 		// 🛩️ write your logic within the scope of your case
-
+		case RECIPES_ACTION_TYPES.GET_WISH_LIST: {
+			return {
+				...state,
+				wishlist: [...action.payload],
+			};
+		}
 		case RECIPES_ACTION_TYPES.ADD_TO_WISH_LIST: {
 			return {
 				...state,
