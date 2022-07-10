@@ -1,13 +1,18 @@
 import { RECIPES_ACTION_TYPES } from '../actions/recipes.actions';
-import data from '../../data.json';
 
 const INITIAL_STATE = {
 	wishlist: [],
-	recipes: data.recipes,
+	recipes: [],
 };
 
 const recipesReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
+		case RECIPES_ACTION_TYPES.GET_RECIPES: {
+			return {
+				...state,
+				recipes: [...action.payload],
+			};
+		}
 		case RECIPES_ACTION_TYPES.ADD_TO_WISH_LIST: {
 			return {
 				...state,
