@@ -1,5 +1,14 @@
 import { getRecipesAction } from '../actions/recipes.actions';
 import Axios from './../../api/axios';
+const { v4: uuid } = require('uuid');
+
+// generating random unique userId
+const id = uuid();
+
+console.log('userId', id);
+
+// get the userId from the console
+const USER_ID = '';
 
 export const getRecipesService = () => async (dispatch) => {
 	try {
